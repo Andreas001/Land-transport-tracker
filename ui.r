@@ -22,6 +22,7 @@ shinyUI
     
     dashboardBody
     (
+      leafletOutput("map")
       fluidRow
       (
         tabItems
@@ -33,14 +34,14 @@ shinyUI
             (
               title = "Heh",
               collapsible = TRUE,
-              leafletOutput("map"),
-              sliderInput("count", "number", 1, 8, 2)
+              #leafletOutput("map"),
+              #sliderInput("count", "number", 1, 8, 2)
             ),
             box
             (
               title = "hah",
               collapsible = TRUE,
-              sliderInput("count", "number", 1, 8, 2)
+              #sliderInput("count", "number", 1, 8, 2)
             )
           )
         )
