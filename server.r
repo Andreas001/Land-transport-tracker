@@ -7,8 +7,6 @@ shinyServer(function(input, output)
 {
   library(jsonlite)
   
-  jsonFile = fromJSON("http://api.metro.net/agencies/lametro/vehicles/")
-  dataFrame <- as.data.frame(jsonFile)
   #newDataFrame <- dataFrame[c(3,4,6,7)]
   
   output$map <- renderLeaflet
@@ -24,10 +22,4 @@ shinyServer(function(input, output)
     jsonFile = fromJSON("http://api.metro.net/agencies/lametro/vehicles/")
     dataFrame <- as.data.frame(jsonFile)
   })
-  
-  output$plot <- renderPlot
-  ({
-      newDataFrame(items.heading$items.id)
-  })
-  
 })
