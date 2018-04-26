@@ -10,10 +10,14 @@ shinyServer(function(input, output)
   jsonFile = fromJSON("http://api.metro.net/agencies/lametro/vehicles/")
   dataFrame <- as.data.frame(jsonFile)
   
-  output$map <- renderLeaflet
+  dud <- reactive 
+  ({
+    output$map <- renderLeaflet
   ({
     leaflet(data = dataFrame[1:input$count,]) 
     leaflet() %>% addTiles() %>%
     addMarkers(~items.longitude, ~items.latitude, popup = ~as.character(items.heading), label =~as.character(items.id))
   })
+  })
+  
 })
