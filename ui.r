@@ -32,7 +32,7 @@ shinyUI
             (
               title = "Heh",
               collapsible = TRUE,
-              leafletOutput("plot")
+              plotlyOutput("plot")
               #sliderInput("count", "number", 1, 8, 2)
             ),
             box
