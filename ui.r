@@ -41,7 +41,7 @@ shinyUI
             box
             (
               title = "hah",
-              collapsible = TRUE,
+              collapsible = TRUE
               #sliderInput("count", "number", 1, 8, 2)
             )
           )
