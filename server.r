@@ -15,10 +15,7 @@ shinyServer(function(input, output)
   add_markers(
     color = "red", symbol = I("square"), size = I(8), hoverinfo = "text"
   ) %>%
-  colorbar(title = "Incoming flights<br />February 2011") %>%
-  layout(
-    title = 'Gey<br />(gey)', geo = g
-  )
+  colorbar(title = "Incoming flights<br />February 2011")
     
   output$plot <- renderPlotly({values$p})
 })
