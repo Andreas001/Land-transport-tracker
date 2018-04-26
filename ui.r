@@ -47,12 +47,12 @@ shinyUI
             )
             tabItem
             (
-              tabName = "Raw data"
+              tabName = "Raw data",
               box
-            (
-              title = "Raw data",
-              collapsible = TRUE  
-            )
+              (
+                title = "Raw data",
+               collapsible = TRUE  
+              )
           )
         )
       )
