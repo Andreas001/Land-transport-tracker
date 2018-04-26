@@ -25,7 +25,7 @@ shinyUI
       (
         tabItems
         (
-          tabItem
+          tabItem,
           (
             tabName = "Bus location",
             box
@@ -35,7 +35,7 @@ shinyUI
               plotlyOutput("plot"),
               sliderInput("count", "number", 1, 500, 50)
             )
-          tabItem
+          tabItem,
           (
               tabName = "Bus stop location",
               box
