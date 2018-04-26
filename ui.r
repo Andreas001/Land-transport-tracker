@@ -13,6 +13,7 @@ shinyUI
     
     dashboardSidebar
     (
+      sliderInput("count", "number", 1, 8, 2),
       menuItem("Dashboard"),
         menuSubItem("sub board", tabName = "map"),
       menuItem("new 1"),
@@ -32,7 +33,8 @@ shinyUI
             (
               title = "Heh",
               collapsible = TRUE,
-              leafletOutput("map")
+              leafletOutput("map"),
+              sliderInput("count", "number", 1, 8, 2)
             ),
             box
             (
