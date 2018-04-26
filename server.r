@@ -10,7 +10,7 @@ shinyServer(function(input, output)
   jsonFile = fromJSON("http://api.metro.net/agencies/lametro/vehicles/")
   dataFrame <- as.data.frame(jsonFile)
   
-  values <- reactiveValues()
+  map <- reactiveValues()
   
   #newDataFrame <- dataFrame[c(3,4,6,7)]
   
