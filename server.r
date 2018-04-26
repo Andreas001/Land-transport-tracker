@@ -7,12 +7,6 @@ shinyServer(function(input, output)
 {
   library(jsonlite)
   
-  values <- reactiveValues(A=1)
-
-  reactiveB <- reactive({
-  values$A + 1
-  })
-  
   jsonFile = fromJSON("http://api.metro.net/agencies/lametro/vehicles/")
   dataFrame <- as.data.frame(jsonFile)
   
