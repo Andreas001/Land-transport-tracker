@@ -2,6 +2,7 @@ library(shiny)
 library(shinydashboard)
 library(leaflet)
 library(jsonlite)
+library(plotly)
 
 shinyServer(function(input, output)
 {
@@ -9,16 +10,15 @@ shinyServer(function(input, output)
   
   jsonFile = fromJSON("http://api.metro.net/agencies/lametro/vehicles/")
   dataFrame <- as.data.frame(jsonFile)
-  
-  observe
-  ({
-    invalidateLater(1000, session)
-    jsonFile = fromJSON("http://ihealth.sepdek.net/")
-    dataFrame <- as.data.frame(jsonFile)
     
-    leaflet(data = dataFrame[1:input$count,]) 
-    leaflet() %>% addTiles() %>%
-    addMarkers(~items.longitude, ~items.latitude, popup = ~as.character(items.heading), label =~as.character(items.id))
- })
-  
+  p <- plot_geo(df, lat = ~items.latitude, lon = ~items.longitude) %>%
+  add_markers(
+    color = ~cnt, symbol = I("square"), size = I(8), hoverinfo = "text"
+  ) %>%
+  colorbar(title = "Incoming flights<br />February 2011") %>%
+  layout(
+    title = 'Gey<br />(gey)', geo = g
+  )
+    
+  output$plot <- renderPlotly({values$p})
 })
