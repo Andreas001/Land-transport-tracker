@@ -18,11 +18,11 @@ shinyServer(function(input, output)
   ({
      dataFrame = dataFrame[1:input$count,]
     plot_ly(dataFrame, x = ~items.longitude, y = ~items.latitude)
-  )}
+  })
    
   output$plot2 <- renderPlotly
   ({
      dataFrame2 = dataFrame2[1:input2$count2,]
-    plot_ly(dataFrame2, x = ~items.longitude, y = ~items.latitude)
-  )}
+     plot_ly(dataFrame2, x = ~items.longitude, y = ~items.latitude)
+  })
 })
