@@ -13,7 +13,6 @@ shinyUI
     
     dashboardSidebar
     (
-      sliderInput("count", "number", 1, 8, 2),
       menuItem("Dashboard"),
         menuSubItem("sub board", tabName = "map"),
       menuItem("new 1"),
@@ -21,9 +20,7 @@ shinyUI
     ),
     
     dashboardBody
-    (
-      sliderInput("count", "number", 1, 8, 2),
-      leafletOutput("plot"),
+    (    
       fluidRow
       (
         tabItems
@@ -34,15 +31,15 @@ shinyUI
             box
             (
               title = "Heh",
-              collapsible = TRUE
-              #leafletOutput("map"),
+              collapsible = TRUE,
+              leafletOutput("map")
               #sliderInput("count", "number", 1, 8, 2)
             ),
             box
             (
               title = "hah",
-              collapsible = TRUE
-              #sliderInput("count", "number", 1, 8, 2)
+              collapsible = TRUE,
+              sliderInput("count", "number", 1, 8, 2)
             )
           )
         )
