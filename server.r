@@ -16,13 +16,11 @@ shinyServer(function(input, output)
       leaflet(data = newDataFrame[1:input$count,]) 
       leaflet() %>% addTiles() %>%
       addMarkers(~items.longitude, ~items.latitude, popup = ~as.character(items.heading), label =~as.character(items.id)) %>%
-      points(items.longitude, items.latitude, col = "red", cex = .6)
-    
   })
   
   output$plot <- renderPlot
   ({
-      newDataFrame(items.heading$items.id, breaks = input$count)
+      newDataFrame(items.heading$items.id)
   })
   
 })
