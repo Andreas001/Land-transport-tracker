@@ -12,6 +12,7 @@ shinyServer(function(input, output)
   dataFrame <- as.data.frame(jsonFile)
     
   output$plot <- renderPlotly({
+    dataFrame = dataFrame[1:input$count,]
     plot_ly(dataFrame, x = ~items.longitude, y = ~items.latitude)
   })
 })
