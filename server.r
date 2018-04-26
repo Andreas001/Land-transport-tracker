@@ -13,7 +13,7 @@ shinyServer(function(input, output)
     
   p <- plot_geo(df, lat = ~items.latitude, lon = ~items.longitude) %>%
   add_markers(
-    color = ~cnt, symbol = I("square"), size = I(8), hoverinfo = "text"
+    color = "red", symbol = I("square"), size = I(8), hoverinfo = "text"
   ) %>%
   colorbar(title = "Incoming flights<br />February 2011") %>%
   layout(
