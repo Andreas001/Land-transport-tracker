@@ -8,15 +8,15 @@ shinyUI
   (
     dashboardHeader
     (
-      title = "DA WEI"
+      title = "Bus things"
     ),
     
     dashboardSidebar
     (
       menuItem("Dashboard"),
-        menuSubItem("sub board", tabName = "map"),
-      menuItem("new 1"),
-      menuItem("new 2")
+        menuSubItem("Bus locations", tabName = "Bus location"),
+        menuSubItem("Bus stop locations", tabName = "Bus stop location"),
+      menuItem("Raw data", tabName = "Raw data")
     ),
     
     dashboardBody
@@ -27,19 +27,32 @@ shinyUI
         (
           tabItem
           (
-            tabName = "map",
+            tabName = "Bus location",
             box
             (
-              title = "Heh",
+              title = "Bus locations",
               collapsible = TRUE,
               plotlyOutput("plot")
-              #sliderInput("count", "number", 1, 8, 2)
-            ),
-            box
+              sliderInput("count", "number", 1, 500, 50)
+            )
+            tabItem
             (
-              title = "hah",
+              tabName = "Bus stop location"
+              box
+            (
+              title = "Bus Stops",
               collapsible = TRUE,
-              sliderInput("count", "number", 1, 8, 2)
+              plotlyOutput("plot2"),
+              sliderInput("count2", "number2", 1, 1500, 50)
+            )
+            tabItem
+            (
+              tabName = "Raw data"
+              box
+            (
+              title = "Raw data",
+              collapsible = TRUE,
+              
             )
           )
         )
