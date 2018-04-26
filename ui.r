@@ -22,8 +22,8 @@ shinyUI
     
     dashboardBody
     (
-      leafletOutput("map"),
       sliderInput("count", "number", 1, 8, 2),
+      leafletOutput("map"),
       fluidRow
       (
         tabItems
