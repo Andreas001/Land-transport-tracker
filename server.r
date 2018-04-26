@@ -11,7 +11,7 @@ shinyServer(function(input, output)
   jsonFile = fromJSON("http://api.metro.net/agencies/lametro/vehicles/")
   dataFrame <- as.data.frame(jsonFile)
     
-  p <- plot_geo(df, lat = ~items.latitude, lon = ~items.longitude) %>%
+  p <- plot_geo(dataFrame, lat = ~items.latitude, lon = ~items.longitude) %>%
   add_markers(
     color = "red", symbol = I("square"), size = I(8), hoverinfo = "text"
   ) %>%
