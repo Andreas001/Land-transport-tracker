@@ -32,12 +32,12 @@ shinyUI
             (
               title = "Bus locations",
               collapsible = TRUE,
-              plotlyOutput("plot")
+              plotlyOutput("plot"),
               sliderInput("count", "number", 1, 500, 50)
             )
             tabItem
             (
-              tabName = "Bus stop location"
+              tabName = "Bus stop location",
               box
             (
               title = "Bus Stops",
@@ -51,8 +51,7 @@ shinyUI
               box
             (
               title = "Raw data",
-              collapsible = TRUE,
-              
+              collapsible = TRUE  
             )
           )
         )
