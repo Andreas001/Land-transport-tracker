@@ -22,7 +22,7 @@ shinyServer(function(input, output)
    
   output$plot2 <- renderPlotly
   ({
-     dataFrame2 = dataFrame2[1:input$count,]
+     dataFrame2 = dataFrame2[1:input2$count2,]
     plot_ly(dataFrame2, x = ~items.longitude, y = ~items.latitude)
   )}
 })
