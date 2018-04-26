@@ -16,6 +16,5 @@ shinyServer(function(input, output)
     color = "red", symbol = I("square"), size = I(8), hoverinfo = "text"
   ) %>%
   colorbar(title = "Incoming flights<br />February 2011")
-    
-  output$plot <- renderPlotly({values$p})
+  output$plot <- renderPlotly({p$p})
 })
