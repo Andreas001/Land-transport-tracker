@@ -12,7 +12,7 @@ shinyServer(function(input, output)
   
   mapS <- reactive
   ({
-    map[,c("mpg", input$count)]
+    map[,c("dataFrame", input$count)]
   })
   
   output$map <- renderLeaflet
