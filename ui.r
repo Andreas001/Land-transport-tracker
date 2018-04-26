@@ -21,29 +21,25 @@ shinyUI
     
     dashboardBody
     (
-      leafletOutput("map"),
-      tabItems
+      fluidRow
       (
-        tabItem
+        tabItems
         (
-          tabName = "map",
-          box
+          tabItem
           (
-            title = "Heh",
-            collapsible = TRUE,
-            leafletOutput("map")
-          ),
-          box
-          (
-            title = "hah",
-            collapsible = TRUE,
-            sliderInput("count", "number", 1, 8, 2)
-          ),
-          box
-          (
-            title = "Heh",
-            collapsible = TRUE,
-            leafletOutput("plot")
+            tabName = "map",
+            box
+            (
+              title = "Heh",
+              collapsible = TRUE,
+              leafletOutput("map")
+            ),
+            box
+            (
+              title = "hah",
+              collapsible = TRUE,
+              sliderInput("count", "number", 1, 8, 2)
+            )
           )
         )
       )
