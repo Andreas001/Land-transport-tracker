@@ -33,7 +33,7 @@ shinyUI
               title = "Bus locations",
               collapsible = TRUE,
               plotlyOutput("plot"),
-              sliderInput("count", "number", 1, 500, 50)
+              sliderInput("count", "number", 1, 70, 30)
             )
           ),
           tabItem
