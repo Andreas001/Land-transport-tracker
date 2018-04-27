@@ -1,28 +1,15 @@
 library(shiny)
-library(shinydashboard)
 library(leaflet)
-library(jsonlite)
-library(plotly)
+
 
 shinyServer(function(input, output)
 {
-  library(jsonlite)
+  dataFrame = read.csv("BusData.csv")
   
-  jsonFile = fromJSON("http://api.metro.net/agencies/lametro/vehicles/")
-  dataFrame <- as.data.frame(jsonFile)
-  
-  jsonFile2 = fromJSON("http://api.metro.net/agencies/lametro/routes/704/stops/")
-  dataFrame2 <- as.data.frame(jsonFile2)
-  
-  output$plot <- renderPlotly
+  output$plot <- renderLeaflet
   ({
      dataFrame = dataFrame[1:input$count,]
-    plot_ly(dataFrame, x = ~items.longitude, y = ~items.latitude)
-  })
-   
-  output$plot2 <- renderPlotly
-  ({
-     dataFrame2 = dataFrame2[1:input2$count2,]
-     plot_ly(dataFrame2, x = ~items.longitude, y = ~items.latitude)
+     leaflet(data = dataFrame[1:input$busCount,]) %>% addTiles() %>%
+      addMarkers(~value.longitude, ~value.latitude, popup = ~as.character(value.display_name), label=~as.character(value.id))
   })
 })
