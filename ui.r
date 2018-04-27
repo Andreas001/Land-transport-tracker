@@ -14,9 +14,9 @@ shinyUI
     dashboardSidebar
     (
       menuItem("Dashboard"),
-        menuSubItem("Bus locations", tabName = "Bus location"),
-        menuSubItem("Bus stop locations", tabName = "Bus stop location"),
-      menuItem("Raw data", tabName = "Raw data")
+        menuSubItem("Bus locations", tabName = "busLocation"),
+        menuSubItem("Bus stop locations", tabName = "busSLocation"),
+      menuItem("Raw data", tabName = "rawData")
     ),
     
     dashboardBody
@@ -27,7 +27,7 @@ shinyUI
         (
           tabItem
           (
-            tabName = "Bus location",
+            tabName = "busLocation",
             box
             (
               title = "Bus locations",
@@ -38,7 +38,7 @@ shinyUI
           ),
           tabItem
           (
-              tabName = "Bus stop location",
+              tabName = "busSLocation",
               box
               (
               title = "Bus Stops",
@@ -49,7 +49,7 @@ shinyUI
           ),
           tabItem
           (
-              tabName = "Raw data",
+              tabName = "rawData",
               box
               (
                 title = "Raw data",
