@@ -32,7 +32,7 @@ shinyUI
             (
               title = "Bus locations",
               collapsible = TRUE,
-              plotlyOutput("plot"),
+              leafletOutput("plot"),
               sliderInput("busCount", "number", 1, 70, 30)
             )
           ),
@@ -43,7 +43,7 @@ shinyUI
               (
               title = "Bus Stops",
               collapsible = TRUE,
-              plotlyOutput("plot2"),
+              leafletOutput("plot2"),
               sliderInput("count2", "number2", 1, 1500, 50)
               )
           ),
