@@ -2,7 +2,6 @@ library(shiny)
 library(leaflet)
 library(jsonlite)
 
-
 shinyServer(function(input, output)
 {
   library(jsonlite)
@@ -12,6 +11,6 @@ shinyServer(function(input, output)
   output$busLoc <- renderLeaflet
   ({
      leaflet(data = dataFrame[1:input$busCount,]) %>% addTiles() %>%
-      addMarkers(~value.longitude, ~value.latitude, popup = ~as.character(value.display_name), label=~as.character(value.id))
+      addMarkers(~items.longitude, ~items.latitude, popup = ~as.character(items.headings), label=~as.character(item.id))
   })
 })
