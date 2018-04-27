@@ -1,10 +1,13 @@
 library(shiny)
 library(leaflet)
+library(jsonlite)
 
 
 shinyServer(function(input, output)
 {
-  dataFrame = read.csv("BusData.csv")
+  library(jsonlite)
+  jsonFile = fromJSON("http://api.metro.net/agencies/lametro/vehicles/")
+  dataFrame <- as.data.frame(jsonFILE)
   
   output$busLoc <- renderLeaflet
   ({
