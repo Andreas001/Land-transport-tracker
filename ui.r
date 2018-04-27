@@ -20,7 +20,9 @@ shinyUI
     ),
     
     dashboardBody
-    (    
+    (
+      leafletOutput("busLoc"),
+      sliderInput(inputId = "busCount", label = "number", min = 1, max = 1500, value = 100)
       fluidRow
       (
         tabItems
@@ -31,9 +33,9 @@ shinyUI
             box
             (
               title = "Bus locations",
-              collapsible = TRUE,
-              leafletOutput("busLoc"),
-              sliderInput(inputId = "busCount", label = "number", min = 1, max = 1500, value = 100)
+              collapsible = TRUE
+              #leafletOutput("busLoc"),
+              #sliderInput(inputId = "busCount", label = "number", min = 1, max = 1500, value = 100)
             )
           ),
           tabItem
