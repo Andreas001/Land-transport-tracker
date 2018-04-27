@@ -33,7 +33,7 @@ shinyUI
               title = "Bus locations",
               collapsible = TRUE,
               leafletOutput("busLoc"),
-              sliderInput(inputId = "busCount", label = "number", min = 1, max = 70, value = 30)
+              sliderInput(inputId = "busCount", label = "number", min = 1, max = 1500, value = 100)
             )
           ),
           tabItem
